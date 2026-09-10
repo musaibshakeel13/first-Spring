@@ -1,1 +1,15 @@
 
+package com.example.demo;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+    public static void main(String[] args) {
+    ApplicationContext context =
+            new ClassPathXmlApplicationContext("applicationBeanContext.xml");
+    GreetService greatingService
+            = (GreetService) context.getBean("myBean");
+    greatingService.sayhello();
+    }
+}
